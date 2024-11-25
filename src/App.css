@@ -1,0 +1,103 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btnWrapper {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.btnWrapper button {
+  padding: 6px 10px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.currentPage {
+  background: skyblue;
+  border: none;
+  color: white;
+  font-weight: bold;
+}
+
+.disableBtn {
+  opacity: 0.5;
+  cursor: not-allowed !important;
+}
+
+.cardWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* Adjust the gap between cards */
+  margin-top: 20px; /* Adjust margin as needed */
+}
+
+.card {
+  --background: linear-gradient(to left, #f7ba2b 0%, #ea5358 100%);
+  width: calc(20% - 40px); /* Calculate width to fit 5 cards in a row with gap */
+  min-width: 150px; /* Minimum width of each card */
+  max-width: 200px; /* Maximum width of each card */
+  height: 254px;
+  padding: 5px;
+  border-radius: 1rem;
+  overflow: hidden;
+  background: var(--background);
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+.card:hover {
+  transform: translateY(-5px); /* Example of hover effect */
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background: var(--background);
+  filter: blur(25px);
+  opacity: 0.8;
+  transition: opacity 0.5s;
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 10px;
+  text-align: center;
+  color: #181818;
+}
+
+.card .title {
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  margin-top: 10px;
+}
+
+.cardImage {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
